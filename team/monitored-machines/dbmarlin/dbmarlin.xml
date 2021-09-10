@@ -1,0 +1,217 @@
+<connection-ssh authentication="1" interval="5000" login="dbmarlin"
+    name="dbmarlin" operatingSystem="1" password=""
+    private-key="/Users/smcllc/sshkeys/dbmarlinkey"
+    server-address="45.62.250.67" server-port="33000" uid="07badcc2-2770-4b23-b23c-835511b10f2f">
+    <monitor-category name="System" short-display-name="System">
+        <simple-monitor-telnet callTime="ON_BENCH" category="0"
+            computing="0" format="NUMBER" monitor="1"
+            name="System/CPU User" sampling="0"
+            short-display-name="CPU User" unit="%"/>
+        <simple-monitor-telnet callTime="ON_BENCH" category="0"
+            computing="0" format="NUMBER" monitor="2"
+            name="System/CPU System" sampling="0"
+            short-display-name="CPU System" unit="%"/>
+        <simple-monitor-telnet callTime="ON_BENCH" category="0"
+            computing="0" format="NUMBER" monitor="3"
+            name="System/CPU Idle" sampling="0"
+            short-display-name="CPU Idle"
+            threshold="84271341-8c09-4dd3-b63e-3983c4b8a902" unit="%"/>
+        <simple-monitor-telnet callTime="ON_BENCH" category="0"
+            computing="0" format="NUMBER" monitor="13"
+            name="System/Context switch count per CPU" sampling="0"
+            short-display-name="Context switch count per CPU"
+            threshold="1d6f1df0-da09-4154-bbc0-2c9d93b8a529" unit=""/>
+        <simple-monitor-telnet callTime="ON_BENCH" category="0"
+            computing="0" format="NUMBER" monitor="6"
+            name="System/Process Runnable" sampling="0"
+            short-display-name="Process Runnable" unit=""/>
+        <simple-monitor-telnet callTime="ON_BENCH" category="0"
+            computing="0" format="NUMBER" monitor="12"
+            name="System/Process Runnable per CPU" sampling="0"
+            short-display-name="Process Runnable per CPU"
+            threshold="81fd74de-016b-4b0e-9d7a-31fa499a9d29" unit=""/>
+        <simple-monitor-telnet callTime="ON_BENCH" category="0"
+            computing="0" format="NUMBER" monitor="10"
+            name="System/Swap in" sampling="0"
+            short-display-name="Swap in"
+            threshold="7382b67d-462f-4fac-89d4-7b463f5d0ca6" unit=""/>
+    </monitor-category>
+    <monitor-category name="Memory" short-display-name="Memory">
+        <simple-monitor-telnet callTime="ON_BENCH" category="1"
+            computing="0" format="NUMBER" monitor="3"
+            name="Memory/Memory Free" sampling="0"
+            short-display-name="Memory Free" unit=""/>
+        <simple-monitor-telnet callTime="ON_BENCH" category="1"
+            computing="0" format="NUMBER" monitor="10"
+            name="Memory/% User Memory" sampling="0"
+            short-display-name="% User Memory"
+            threshold="553b6927-6c8e-4143-a66f-a1e8e57f30d0" unit="%"/>
+        <simple-monitor-telnet callTime="ON_BENCH" category="1"
+            computing="0" format="NUMBER" monitor="8"
+            name="Memory/Swap Used" sampling="0"
+            short-display-name="Swap Used" unit=""/>
+    </monitor-category>
+    <monitor-category name="TCP" short-display-name="TCP">
+        <tcp-monitor-telnet callTime="ON_BENCH" category="5"
+            computing="0" format="NUMBER" monitor="4"
+            name="TCP/% Segments retransmitted" sampling="0"
+            short-display-name="% Segments retransmitted"
+            threshold="4b9fb0e7-9aa9-44ff-bad2-4ce381f6508d" unit="%"/>
+    </monitor-category>
+    <monitor-category name="Network (per interface)" short-display-name="Network (per interface)">
+        <network-monitor-telnet callTime="ON_BENCH" category="4"
+            computing="0" format="NUMBER" iface="ens160" monitor="5"
+            name="Network (per interface)/% Incoming packet errors"
+            sampling="0"
+            short-display-name="% Incoming packet errors(ens160)"
+            threshold="a879db9f-f936-4c79-8e22-f075ca720e7b" unit="%"/>
+        <network-monitor-telnet callTime="ON_BENCH" category="4"
+            computing="0" format="NUMBER" iface="ens160" monitor="10"
+            name="Network (per interface)/% Outgoing packet errors"
+            sampling="0"
+            short-display-name="% Outgoing packet errors(ens160)"
+            threshold="87ada017-54c9-4e8f-b406-726e66ed3c74" unit="%"/>
+    </monitor-category>
+    <threshold enabled="true" uid="84271341-8c09-4dd3-b63e-3983c4b8a902">
+        <threshold-condition durationKind="SECONDS" durationNumber="30"
+            operator="LESS_THAN" severity="LOW" valueMax="Infinity" valueMin="10.0">
+            <threshold-comment language="en">
+                <threshold-content>Global CPU high.</threshold-content>
+            </threshold-comment>
+            <threshold-comment language="fr">
+                <threshold-content>CPU global surchargé.</threshold-content>
+            </threshold-comment>
+        </threshold-condition>
+    </threshold>
+    <threshold enabled="true" uid="1d6f1df0-da09-4154-bbc0-2c9d93b8a529">
+        <threshold-condition durationKind="SECONDS" durationNumber="30"
+            operator="GREATER_THAN" severity="LOW" valueMax="Infinity" valueMin="10000.0">
+            <threshold-comment language="en">
+                <threshold-content>High number of context switch per second.</threshold-content>
+            </threshold-comment>
+            <threshold-comment language="fr">
+                <threshold-content>Nombre élevé de changement de contexte par seconde.</threshold-content>
+            </threshold-comment>
+        </threshold-condition>
+        <threshold-condition durationKind="SECONDS" durationNumber="30"
+            operator="GREATER_THAN" severity="HIGH" valueMax="Infinity" valueMin="30000.0">
+            <threshold-comment language="en">
+                <threshold-content>High number of context switch per second.</threshold-content>
+            </threshold-comment>
+            <threshold-comment language="fr">
+                <threshold-content>Nombre élevé de changement de contexte par seconde.</threshold-content>
+            </threshold-comment>
+        </threshold-condition>
+    </threshold>
+    <threshold enabled="true" uid="81fd74de-016b-4b0e-9d7a-31fa499a9d29">
+        <threshold-condition durationKind="SECONDS" durationNumber="15"
+            operator="GREATER_THAN" severity="LOW" valueMax="Infinity" valueMin="4.0">
+            <threshold-comment language="en">
+                <threshold-content>CPU resource problem. Task are forced to wait for execution.</threshold-content>
+            </threshold-comment>
+            <threshold-comment language="fr">
+                <threshold-content>Problème de resource CPU. Les tâches doivent attendre pour s'exécuter.</threshold-content>
+            </threshold-comment>
+        </threshold-condition>
+        <threshold-condition durationKind="SECONDS" durationNumber="15"
+            operator="GREATER_THAN" severity="HIGH" valueMax="Infinity" valueMin="8.0">
+            <threshold-comment language="en">
+                <threshold-content>CPU resource problem. Several tasks are forced to wait for execution.</threshold-content>
+            </threshold-comment>
+            <threshold-comment language="fr">
+                <threshold-content>Problème de resource CPU. Les tâches doivent attendre pour s'exécuter.</threshold-content>
+            </threshold-comment>
+        </threshold-condition>
+    </threshold>
+    <threshold enabled="true" uid="7382b67d-462f-4fac-89d4-7b463f5d0ca6">
+        <threshold-condition durationKind="SECONDS" durationNumber="30"
+            operator="GREATER_THAN" severity="LOW" valueMax="Infinity" valueMin="1.0">
+            <threshold-comment language="en">
+                <threshold-content>High Swap in, possible memory swap.</threshold-content>
+            </threshold-comment>
+            <threshold-comment language="fr">
+                <threshold-content>Taille Swap in par seconde important, probable swap sur disque.</threshold-content>
+            </threshold-comment>
+        </threshold-condition>
+        <threshold-condition durationKind="SECONDS" durationNumber="30"
+            operator="GREATER_THAN" severity="HIGH" valueMax="Infinity" valueMin="10.0">
+            <threshold-comment language="en">
+                <threshold-content>High Swap in, possible memory swap.</threshold-content>
+            </threshold-comment>
+            <threshold-comment language="fr">
+                <threshold-content>Taille Swap in par seconde important, probable swap sur disque.</threshold-content>
+            </threshold-comment>
+        </threshold-condition>
+    </threshold>
+    <threshold enabled="true" uid="553b6927-6c8e-4143-a66f-a1e8e57f30d0">
+        <threshold-condition durationKind="SECONDS" durationNumber="30"
+            operator="GREATER_THAN" severity="LOW" valueMax="Infinity" valueMin="95.0">
+            <threshold-comment language="en">
+                <threshold-content>High memory usage.</threshold-content>
+            </threshold-comment>
+            <threshold-comment language="fr">
+                <threshold-content>Forte utilisation mémoire.</threshold-content>
+            </threshold-comment>
+        </threshold-condition>
+    </threshold>
+    <threshold enabled="true" uid="4b9fb0e7-9aa9-44ff-bad2-4ce381f6508d">
+        <threshold-condition durationKind="SECONDS" durationNumber="15"
+            operator="GREATER_THAN" severity="LOW" valueMax="Infinity" valueMin="1.0">
+            <threshold-comment language="en">
+                <threshold-content>Many retransmitted segments.</threshold-content>
+            </threshold-comment>
+            <threshold-comment language="fr">
+                <threshold-content>Nombreux segments retransmis</threshold-content>
+            </threshold-comment>
+        </threshold-condition>
+        <threshold-condition durationKind="SECONDS" durationNumber="15"
+            operator="GREATER_THAN" severity="HIGH" valueMax="Infinity" valueMin="5.0">
+            <threshold-comment language="en">
+                <threshold-content>Many retransmitted segments.</threshold-content>
+            </threshold-comment>
+            <threshold-comment language="fr">
+                <threshold-content>Nombreux segments retransmis</threshold-content>
+            </threshold-comment>
+        </threshold-condition>
+    </threshold>
+    <threshold enabled="true" uid="a879db9f-f936-4c79-8e22-f075ca720e7b">
+        <threshold-condition durationKind="SECONDS" durationNumber="30"
+            operator="GREATER_THAN" severity="LOW" valueMax="Infinity" valueMin="0.03">
+            <threshold-comment language="en">
+                <threshold-content>High network errors rate on incoming packets.</threshold-content>
+            </threshold-comment>
+            <threshold-comment language="fr">
+                <threshold-content>Taux élevé d'erreurs sur les entrées réseaux.</threshold-content>
+            </threshold-comment>
+        </threshold-condition>
+        <threshold-condition durationKind="SECONDS" durationNumber="30"
+            operator="GREATER_THAN" severity="HIGH" valueMax="Infinity" valueMin="0.1">
+            <threshold-comment language="en">
+                <threshold-content>High network errors rate on incoming packets.</threshold-content>
+            </threshold-comment>
+            <threshold-comment language="fr">
+                <threshold-content>Taux élevé d'erreurs sur les entrées réseaux.</threshold-content>
+            </threshold-comment>
+        </threshold-condition>
+    </threshold>
+    <threshold enabled="true" uid="87ada017-54c9-4e8f-b406-726e66ed3c74">
+        <threshold-condition durationKind="SECONDS" durationNumber="30"
+            operator="GREATER_THAN" severity="LOW" valueMax="Infinity" valueMin="0.03">
+            <threshold-comment language="en">
+                <threshold-content>High network errors rate on outgoing packets.</threshold-content>
+            </threshold-comment>
+            <threshold-comment language="fr">
+                <threshold-content>Taux élevé d'erreurs sur les sorties réseaux.</threshold-content>
+            </threshold-comment>
+        </threshold-condition>
+        <threshold-condition durationKind="SECONDS" durationNumber="30"
+            operator="GREATER_THAN" severity="HIGH" valueMax="Infinity" valueMin="0.1">
+            <threshold-comment language="en">
+                <threshold-content>High network errors rate on outgoing packets.</threshold-content>
+            </threshold-comment>
+            <threshold-comment language="fr">
+                <threshold-content>Taux élevé d'erreurs sur les sorties réseaux.</threshold-content>
+            </threshold-comment>
+        </threshold-condition>
+    </threshold>
+</connection-ssh>

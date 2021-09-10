@@ -1,0 +1,21 @@
+<lg-host citrixSupport="false" hostname="142.47.97.204:7102"
+    loadWeight="1" sapSupport="false" standalone="true"
+    supportWANEmulation="false"
+    uid="c05b618c-42a8-4a92-ad99-3b047f41df1f" version="7.11.0;build=20210903-38">
+    <!--****** LG NETWORK INTERFACES ******-->
+    <lg-networkiface description="lo" enabled="false" isLoopBack="true" name="lo">
+        <!--****** LG ADDRESSES ******-->
+        <lg-address enabled="false" hostname="localhost">
+            <ip value="127.0.0.1"/>
+        </lg-address>
+        <!--****** END LG ADDRESSES ******-->
+    </lg-networkiface>
+    <lg-networkiface description="eth0" enabled="false"
+        isLoopBack="false" name="eth0">
+        <!--****** LG ADDRESSES ******-->
+        <lg-address enabled="false" hostname="8a1a2538941c">
+            <ip value="172.17.0.4"/>
+        </lg-address>
+        <!--****** END LG ADDRESSES ******-->
+    </lg-networkiface>
+</lg-host>

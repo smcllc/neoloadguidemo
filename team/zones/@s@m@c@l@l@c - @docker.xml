@@ -1,0 +1,12 @@
+<zone dnsOverrideEnabled="false" lgIdentifier="" proxyType="COMMON"
+    proxyTypeLg="NO_PROXY" uid="SMCLLC - Docker">
+    <embedded-action>c05b618c-42a8-4a92-ad99-3b047f41df1f</embedded-action>
+    <embedded-action>a14a8860-d667-46e7-b23c-97711de3eb41</embedded-action>
+    <lg-proxy>
+        <proxy-config autoConfig="false" autoConfigScript=""
+            autoDiscover="false" cache="GLOBAL_CACHE_MODE"
+            exclustionList="" ftpHost="" ftpPort="21" httpHost=""
+            httpPort="80" httpsHost="" httpsPort="443" login=""
+            manualConfig="false" passwordEncrypted="rAMyA0wmzcI7dEIrFmzuRA=="/>
+    </lg-proxy>
+</zone>
