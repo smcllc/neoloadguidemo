@@ -1,0 +1,14 @@
+# Project description file
+
+project.name=test
+project.version=8.3
+project.original.version=8.3
+product.name=NeoLoad
+product.original.name=NeoLoad
+product.original.version=7.11.0
+project.is-open-test-settings-after-upload=false
+project.id=27f8e988-62a8-42ce-a883-c6b1b12aee1f
+project.config.path=config.zip
+project.config.storage=ZIP
+team.server.enabled=true
+team.server.project=/smcllc/neoloadguidemo.git
